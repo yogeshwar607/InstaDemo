@@ -1,0 +1,13 @@
+<StackLayout #container verticalAlignment="center" horizontalAlignment="center" widht="100%" height="80%">
+  <Image src="~/images/security.png" height="30%" horizontalAlignment="center" verticalAlignment="center"></Image>
+  <TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+  autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
+<Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+<label horizontalAlignment="center">----OR----</label>
+<Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+<Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+
+</StackLayout>
