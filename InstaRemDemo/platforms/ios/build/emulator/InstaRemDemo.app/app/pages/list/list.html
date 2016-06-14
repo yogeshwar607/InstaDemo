@@ -1,5 +1,10 @@
-<ActionBar title="Groceries">
-  <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+<ActionBar>
+  <StackLayout orientation="horizontal">
+    <Image src="~/images/timer.png" class="action-image"></Image>
+    <Image src="~/images/user.png" class="action-image"></Image>
+    <Image src="~/images/tag.png" class="action-image"></Image>
+  <ActionItem text="Share" (tap)="share()"  android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+  </StackLayout>
 </ActionBar>
 <GridLayout rows="auto, *">
 

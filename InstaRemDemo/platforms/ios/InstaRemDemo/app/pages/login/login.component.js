@@ -34,9 +34,12 @@ var LoginPage = (function () {
         }
     };
     LoginPage.prototype.login = function () {
-        var _this = this;
-        this._userService.login(this.user)
-            .subscribe(function () { return _this._router.navigate(["List"]); }, function (error) { return alert("Unfortunately we could not find your account."); });
+        this._router.navigate(["List"]);
+        // this._userService.login(this.user)
+        //   .subscribe(
+        //     () => this._router.navigate(["List"]),
+        //     (error) => alert("Unfortunately we could not find your account.")
+        //   );
     };
     LoginPage.prototype.signUp = function () {
         var _this = this;

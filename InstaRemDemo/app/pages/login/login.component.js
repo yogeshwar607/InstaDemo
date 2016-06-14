@@ -13,7 +13,7 @@ var LoginPage = (function () {
         this._userService = _userService;
         this.isLoggingIn = true;
         this.user = new user_1.User();
-        this.user.email = "user@nativescript.org";
+        this.user.email = "test@instarem.com";
         this.user.password = "password";
     }
     LoginPage.prototype.ngOnInit = function () {
@@ -34,9 +34,12 @@ var LoginPage = (function () {
         }
     };
     LoginPage.prototype.login = function () {
-        var _this = this;
-        this._userService.login(this.user)
-            .subscribe(function () { return _this._router.navigate(["List"]); }, function (error) { return alert("Unfortunately we could not find your account."); });
+        this._router.navigate(["List"]);
+        // this._userService.login(this.user)
+        //   .subscribe(
+        //     () => this._router.navigate(["List"]),
+        //     (error) => alert("Unfortunately we could not find your account.")
+        //   );
     };
     LoginPage.prototype.signUp = function () {
         var _this = this;

@@ -28,30 +28,8 @@ export class ListPage implements OnInit {
     });
 }
 add() {
-  if (this.grocery.trim() === "") {
-    alert("Enter a grocery item");
-    return;
+    alert("May the force be with you");
   }
-
-  // Dismiss the keyboard
-  let textField = <TextField>this.groceryTextField.nativeElement;
-  textField.dismissSoftInput();
-
-  this._groceryListService.add(this.grocery)
-    .subscribe(
-      groceryObject => {
-        this.groceryList.unshift(groceryObject);
-        this.grocery = "";
-      },
-      () => {
-        alert({
-          message: "An error occurred while adding an item to your list.",
-          okButtonText: "OK"
-        });
-        this.grocery = "";
-      }
-    )
-}
 share() {
   let list = [];
   for (let i = 0, size = this.groceryList.length; i < size ; i++) {

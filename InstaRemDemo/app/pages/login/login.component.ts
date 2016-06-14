@@ -33,7 +33,7 @@ ngOnInit()
 }
 constructor(private page:Page,private _router: Router, private _userService: UserService) {
   this.user = new User();
-  this.user.email = "user@nativescript.org";
+  this.user.email = "test@instarem.com";
   this.user.password = "password";
 }
 
@@ -49,11 +49,12 @@ constructor(private page:Page,private _router: Router, private _userService: Use
   }
 }
 login() {
-  this._userService.login(this.user)
-    .subscribe(
-      () => this._router.navigate(["List"]),
-      (error) => alert("Unfortunately we could not find your account.")
-    );
+  this._router.navigate(["List"])
+  // this._userService.login(this.user)
+  //   .subscribe(
+  //     () => this._router.navigate(["List"]),
+  //     (error) => alert("Unfortunately we could not find your account.")
+  //   );
 }
 signUp() {
   this._userService.register(this.user)
