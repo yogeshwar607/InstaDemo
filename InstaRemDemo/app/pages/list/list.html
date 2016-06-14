@@ -1,19 +1,45 @@
-<ActionBar title="Groceries">
-  <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+<ActionBar>
+ <StackLayout orientation="horizontal" height="150px">
+    <Image src="~/images/timer.png" class="action-image"></Image>
+    <Image src="~/images/user.png" class="action-image"></Image>
+    <Image src="~/images/tag.png" class="action-image"></Image>
+ </StackLayout>
+  <ActionItem text="Share" (tap)="share()"  android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9"
+    ios.position="right" android.position="actionBar"></ActionItem>
 </ActionBar>
-<GridLayout rows="auto, *">
 
-  <GridLayout row="0" columns="*, auto" class="add-bar">
-    <TextField #groceryTextField hint="Enter a grocery item" [(ngModel)]="grocery"
-     col="0"></TextField>
-    <Image src="res://add" (tap)="add()" col="1"></Image>
+<GridLayout rows="*,1.5*,3*">
+
+  <GridLayout row="0" columns="*,8*,*" class="user-bar">
+      <Image src="res://delete" (tap)="add()" col="0"></Image>
+      <Label text="Cristiano R" col="1"></Label>
+      <Image src="~/images/edit.png" (tap)="add()" class="edit-btn" col="2"></Image>
   </GridLayout>
 
-<ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="listLoaded">   
-     <template let-item="item">
-      <Label [text]="item.name" class="medium-spacing"></Label>
-    </template>
-  </ListView>
-<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" 
-row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+<GridLayout row="1" class="user-info-bar" rows="1*,1*" columns="1*,1*">
+  <StackLayout orientation="vertical" row="0" col="0" >
+
+    <Label text="Email" class="user-info-bar-key"></Label>
+    <Label text="abs@abs.com" class="user-info-bar-value"></Label>
+
+  </StackLayout>
+  <StackLayout orientation="vertical" row="0" col="1" >
+
+    <Label text="Mobile" class="user-info-bar-key"></Label>
+    <Label text="1234567898" class="user-info-bar-value"></Label>
+
+  </StackLayout>
+  <StackLayout orientation="vertical" row="1" col="0">
+
+     <Label text="Country" class="user-info-bar-key"></Label>
+     <Label text="INDIA" class="user-info-bar-value"></Label>
+
+  </StackLayout>
+  <StackLayout orientation="vertical" row="1" col="1">
+
+      <Label text="Nationality" class="user-info-bar-key"></Label>
+      <Label text="Indian" class="user-info-bar-value"></Label>
+      
+  </StackLayout>
+</GridLayout>
 </GridLayout>
