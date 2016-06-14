@@ -1,8 +1,4 @@
-var FacebookLoginHandler = require("nativescript-facebook-login");
-var observable = require("data/observable");
-var FacebookLoginHandler = require("nativescript-facebook-login");
-var frameModule = require("ui/frame");
-var topmost = frameModule.topmost;
+
 import {Component, OnInit,ElementRef,ViewChild} from "@angular/core";
 import {User} from "../../shared/user/user"
 import {UserService} from "../../shared/user/user.service";
@@ -12,6 +8,7 @@ import {Color} from "color";
 import {View} from "ui/core/view";
 import {setHintColor} from "../../utils/hint-util";
 import {TextField} from "ui/text-field";
+var orientationModule = require("nativescript-screen-orientation");
 @Component({
   selector: "my-app",
   providers:[UserService],
@@ -27,6 +24,7 @@ isLoggingIn = true;
 @ViewChild("password") password: ElementRef;
 ngOnInit()
 {
+  orientationModule.setCurrentOrientation("portrait");
   this.page.actionBarHidden = true;
   this.page.backgroundColor = new Color("white");
   //this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_login";
@@ -79,67 +77,7 @@ googleConnect(){
 alert("Coming Soon");
 }
 fbConnect() {
-alert("fb clicked");
-     var successCallback = function(result) {
-            //Do something with the result, for example get the AccessToken
-            var token;
-            if (topmost().android){
-              token = result.getAccessToken().getToken();
-            }
-            else if (topmost().ios){
-              token = result.token.tokenString
-            }
-            alert(token);
-        }
-
-        var cancelCallback = function() {
-            alert("Login was cancelled");
-        }
-
-        var failCallback = function(error) {
-            var errorMessage = "Error with Facebook";
-           //Try to get as much information as possible from error
-           if (error) {
-                if (topmost().ios) {
-                    if (error.localizedDescription) {
-                        errorMessage += ": " + error.localizedDescription;
-                    }
-                    else if (error.code) {
-                        errorMessage += ": Code " + error.code;
-                    }
-                    else {
-                        errorMessage += ": " + error;   
-                    }
-                }
-                else if (topmost().android) {
-                    if (error.getErrorMessage) {
-                        errorMessage += ": " + error.getErrorMessage();
-                    }
-                    else if (error.getErrorCode) {
-                        errorMessage += ": Code " + error.getErrorCode();
-                    }
-                    else {
-                        errorMessage += ": " + error;   
-                    }
-                }
-            }
-            alert(errorMessage);
-        }  
-    
-    //Here we select the login behaviour
-
-    //Recomended system account with native fallback for iOS
-    if (topmost().ios) {
-        FacebookLoginHandler.init(2);
-    }
-    //Recomended default for android 
-    else if (topmost().android) {
-        FacebookLoginHandler.init();
-    }
-    //Register our callbacks
-    FacebookLoginHandler.registerCallback(successCallback, cancelCallback, failCallback);
-    //Start the login process
-    FacebookLoginHandler.logInWithPublishPermissions(["publish_actions"]);      
+alert("trying to implement but giving error for angular 2");     
 }
 setTextFieldColors() {
   let emailTextField = <TextField>this.email.nativeElement;

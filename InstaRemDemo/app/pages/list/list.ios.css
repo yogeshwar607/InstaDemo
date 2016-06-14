@@ -1,6 +1,12 @@
+ActionBar {
+  margin-top: 20px;
+}
 TextField {
   border-width: 0;
 }
 .user-bar {
-  margin-top: 20;
+  margin-bottom:0px;
+}
+.user-info-bar {
+  margin-top: -100px;
 }

@@ -6,6 +6,7 @@ var router_deprecated_1 = require("@angular/router-deprecated");
 var page_1 = require("ui/page");
 var color_1 = require("color");
 var hint_util_1 = require("../../utils/hint-util");
+var orientationModule = require("nativescript-screen-orientation");
 var LoginPage = (function () {
     function LoginPage(page, _router, _userService) {
         this.page = page;
@@ -13,10 +14,11 @@ var LoginPage = (function () {
         this._userService = _userService;
         this.isLoggingIn = true;
         this.user = new user_1.User();
-        this.user.email = "user@nativescript.org";
+        this.user.email = "test@instarem.com";
         this.user.password = "password";
     }
     LoginPage.prototype.ngOnInit = function () {
+        orientationModule.setCurrentOrientation("portrait");
         this.page.actionBarHidden = true;
         this.page.backgroundColor = new color_1.Color("white");
         //this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_login";
@@ -62,7 +64,7 @@ var LoginPage = (function () {
         alert("Coming Soon");
     };
     LoginPage.prototype.fbConnect = function () {
-        alert("fb clicked");
+        alert("trying to implement but giving error for angular 2");
     };
     LoginPage.prototype.setTextFieldColors = function () {
         var emailTextField = this.email.nativeElement;
