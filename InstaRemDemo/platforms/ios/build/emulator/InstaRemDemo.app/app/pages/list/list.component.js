@@ -23,25 +23,7 @@ var ListPage = (function () {
         });
     };
     ListPage.prototype.add = function () {
-        var _this = this;
-        if (this.grocery.trim() === "") {
-            alert("Enter a grocery item");
-            return;
-        }
-        // Dismiss the keyboard
-        var textField = this.groceryTextField.nativeElement;
-        textField.dismissSoftInput();
-        this._groceryListService.add(this.grocery)
-            .subscribe(function (groceryObject) {
-            _this.groceryList.unshift(groceryObject);
-            _this.grocery = "";
-        }, function () {
-            alert({
-                message: "An error occurred while adding an item to your list.",
-                okButtonText: "OK"
-            });
-            _this.grocery = "";
-        });
+        alert("May the force be with you");
     };
     ListPage.prototype.share = function () {
         var list = [];
