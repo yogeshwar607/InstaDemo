@@ -1,6 +1,15 @@
+
 TextField {
   border-width: 0;
 }
-.add-bar {
-  margin-top: 20;
+.user-bar {
+  margin-top: 10px;
+  margin-bottom:0px;
+}
+.user-info-bar {
+  margin-top: 0px;
+}
+.user-info-bar StackLayout {
+ margin-top: 5px;
+ margin-bottom: 5px;
 }

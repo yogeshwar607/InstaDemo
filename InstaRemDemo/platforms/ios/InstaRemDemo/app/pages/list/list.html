@@ -8,7 +8,7 @@
     ios.position="right" android.position="actionBar"></ActionItem>-->
 </ActionBar>
 
-<GridLayout rows="1*,2*,6*">
+<GridLayout rows="1*,2*,*,6*">
 
   <GridLayout row="0" columns="*,8*,*" class="user-bar">
       <Image src="res://delete" (tap)="add()" col="0"></Image>
@@ -22,7 +22,6 @@
     <Label text="Email" class="user-info-bar-key"></Label>
     <Label text="abs@abs.com" class="user-info-bar-value"></Label>
     <Label></Label>
-
   </StackLayout>
   <StackLayout orientation="vertical" row="0" col="1" >
     <Label class="user-info-bar-key"></Label>
@@ -43,4 +42,54 @@
       
   </StackLayout>
 </GridLayout>
+
+ <GridLayout row="2" columns="*,8*,*," class="user-kyc-bar">
+      <Label text="" col="0"></Label>
+      <Label text="KYC Information" col="1"></Label>
+      <Image src="~/images/edit.png" (tap)="add()" class="edit-btn" col="2"></Image>
+  </GridLayout>
+
+<TabView #tabview row="3">
+  <StackLayout *tabItem="{title: 'Passport Details'}">
+    <StackLayout orientation="vertical" class="tabview-stack-passport">
+      <StackLayout orientation="vertical">   
+        <Label text="Passport Number" class="user-info-bar-key"></Label>
+        <Label text="POR98979695949392" class="user-info-bar-value"></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Place Of Birth" class="user-info-bar-key"></Label>
+        <Label text="Madeira" class="user-info-bar-value"></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Family Name" class="user-info-bar-key"></Label>
+        <Label text="Cristiano R" class="user-info-bar-value" ></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Country" class="user-info-bar-key"></Label>
+        <Label text="PORTUGAL" class="user-info-bar-value"></Label>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Address Details'}">
+     <StackLayout orientation="vertical" class="tabview-stack-address">
+      <StackLayout orientation="vertical">   
+        <Label text="Passport Number" class="user-info-bar-key"></Label>
+        <Label text="POR98979695949392" class="user-info-bar-value"></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Place Of Birth" class="user-info-bar-key"></Label>
+        <Label text="Madeira" class="user-info-bar-value"></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Family Name" class="user-info-bar-key"></Label>
+        <Label text="Cristiano R" class="user-info-bar-value" ></Label>
+      </StackLayout>
+      <StackLayout orientation="vertical" tabview-stack>   
+        <Label text="Country" class="user-info-bar-key"></Label>
+        <Label text="PORTUGAL" class="user-info-bar-value"></Label>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</TabView>
+
 </GridLayout>

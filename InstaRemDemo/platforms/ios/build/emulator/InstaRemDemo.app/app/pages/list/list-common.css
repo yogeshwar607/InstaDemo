@@ -1,3 +1,7 @@
+Page {
+    background-color: #EBF1F1;
+    font-size: 15
+}
 .action-image {
 padding-left: 10;
 padding-right: 10;
@@ -10,8 +14,8 @@ width: 40px;
 }
 .user-bar {
   background-color: #E0E0E0;
-  margin-bottom: 0px;
-  padding-top: 0px;
+  margin-bottom: 0;
+  padding-top: 0;
 }
 .user-bar Image {
   vertical-align: center;

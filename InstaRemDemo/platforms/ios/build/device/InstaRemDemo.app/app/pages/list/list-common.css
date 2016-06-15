@@ -1,12 +1,44 @@
-.add-bar {
-  background-color: #CB1D00;
-  padding: 5 10;
+.action-image {
+padding-left: 10;
+padding-right: 10;
+padding-bottom: 10;
+padding-top: 10;
+margin-left: 20;
+margin-right: 20;
+height:40px;
+width: 40px;
 }
-.add-bar Image {
-  height: 15;
+.user-bar {
+  background-color: #E0E0E0;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+.user-bar Image {
   vertical-align: center;
-  margin-left: 10;
-  margin-right: 5;
+  margin-right: 2;
+  height: 20px;
+}
+.user-bar Label {
+  color: #717372;
+  height:20px;
+}
+.user-info-bar {
+  background-color: #EBF1F1;
+  vertical-align: center;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.user-info-bar StackLayout {
+  margin-left: 40px;
+}
+.user-info-bar-key {
+  color: #717372;
+  font-size: 10;
+}
+.user-info-bar-value {
+  color: #2A434E;
+  font-size: 14;
+  padding-bottom: 10px;
 }
 TextField {
   color: white;
