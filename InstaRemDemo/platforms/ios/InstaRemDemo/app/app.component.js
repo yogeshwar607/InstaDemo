@@ -4,6 +4,7 @@ var router_deprecated_1 = require("@angular/router-deprecated");
 var router_1 = require("nativescript-angular/router");
 var login_component_1 = require("./pages/login/login.component");
 var list_component_1 = require("./pages/list/list.component");
+var share_component_1 = require("./pages/share/share.component");
 var http_1 = require("@angular/http");
 var AppComponent = (function () {
     function AppComponent() {
@@ -17,7 +18,8 @@ var AppComponent = (function () {
         }),
         router_deprecated_1.RouteConfig([
             { path: "/Login", component: login_component_1.LoginPage, name: "Login", useAsDefault: true },
-            { path: "/List", component: list_component_1.ListPage, name: "List" }
+            { path: "/List", component: list_component_1.ListPage, name: "List" },
+            { path: "/Share", component: share_component_1.SharePage, name: "Share" }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

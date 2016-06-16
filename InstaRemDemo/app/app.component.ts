@@ -3,6 +3,7 @@ import {RouteConfig} from "@angular/router-deprecated";
 import {NS_ROUTER_DIRECTIVES, NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
 import {LoginPage} from "./pages/login/login.component";
 import {ListPage} from "./pages/list/list.component";
+import {SharePage} from "./pages/share/share.component";
 import {HTTP_PROVIDERS} from "@angular/http";
 @Component({
   selector: "main",
@@ -12,6 +13,7 @@ import {HTTP_PROVIDERS} from "@angular/http";
 })
 @RouteConfig([
   { path: "/Login", component: LoginPage, name: "Login", useAsDefault: true },
-  { path: "/List", component: ListPage, name: "List" }
+  { path: "/List", component: ListPage, name: "List" },
+  { path: "/Share", component: SharePage, name: "Share" }
 ])
 export class AppComponent {}

@@ -4,8 +4,8 @@
     <Image src="~/images/user.png" class="action-image" col="1"></Image>
     <Image src="~/images/tag.png" class="action-image" col="2"></Image>
  </GridLayout>
-  <!--<ActionItem text="Share" (tap)="share()"  android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9"
-    ios.position="right" android.position="actionBar"></ActionItem>-->
+  <ActionItem text="Share" (tap)="share()"  android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9"
+    ios.position="right" android.position="actionBar"></ActionItem>
 </ActionBar>
 
 <GridLayout rows="1*,2*,*,6*">
@@ -49,7 +49,7 @@
       <Image src="~/images/edit.png" (tap)="add()" class="edit-btn" col="2"></Image>
   </GridLayout>
 
-<TabView #tabview row="3">
+  <TabView #tabview row="3">
   <StackLayout *tabItem="{title: 'Passport Details'}">
     <StackLayout orientation="vertical" class="tabview-stack-passport">
       <StackLayout orientation="vertical">   
@@ -73,16 +73,16 @@
   <StackLayout *tabItem="{title: 'Address Details'}">
      <StackLayout orientation="vertical" class="tabview-stack-address">
       <StackLayout orientation="vertical">   
-        <Label text="Passport Number" class="user-info-bar-key"></Label>
-        <Label text="POR98979695949392" class="user-info-bar-value"></Label>
+        <Label text="Street" class="user-info-bar-key"></Label>
+        <Label text="5th avenue street" class="user-info-bar-value"></Label>
       </StackLayout>
       <StackLayout orientation="vertical" tabview-stack>   
-        <Label text="Place Of Birth" class="user-info-bar-key"></Label>
+        <Label text="City" class="user-info-bar-key"></Label>
         <Label text="Madeira" class="user-info-bar-value"></Label>
       </StackLayout>
       <StackLayout orientation="vertical" tabview-stack>   
-        <Label text="Family Name" class="user-info-bar-key"></Label>
-        <Label text="Cristiano R" class="user-info-bar-value" ></Label>
+        <Label text="Pincode" class="user-info-bar-key"></Label>
+        <Label text="123456" class="user-info-bar-value" ></Label>
       </StackLayout>
       <StackLayout orientation="vertical" tabview-stack>   
         <Label text="Country" class="user-info-bar-key"></Label>
@@ -91,5 +91,4 @@
     </StackLayout>
   </StackLayout>
 </TabView>
-
 </GridLayout>
