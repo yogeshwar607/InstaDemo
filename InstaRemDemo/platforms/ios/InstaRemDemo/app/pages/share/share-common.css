@@ -1,0 +1,38 @@
+Page {
+    background-color: #EBF1F1;
+    font-size: 15
+}
+.action-image {
+padding-left: 10;
+padding-right: 10;
+padding-bottom: 10;
+padding-top: 10;
+margin-left: 20;
+margin-right: 20;
+height:40px;
+width: 40px;
+}
+.share-people-img {
+    margin-top: 40;
+    margin-bottom: 40;
+}
+.text-lable{
+ text-align: center;
+ color:black;
+ margin-left: 20;
+ margin-right: 20;
+}
+.share-page-btn {
+ text-align: center;
+ margin-left: 25;
+ margin-right: 25;
+ margin-top: 20;
+ background-color: mintcream;
+ border-width:1;
+ border-color:#1F3A45;
+ color:#1F3A45;
+ height: 40px;
+}
+.insta-btn {
+    background-color: #70BE46;
+}

@@ -1,0 +1,8 @@
+StackLayout {
+  height: 85%;
+}
+Button {
+ color: white;
+  height: 40;
+  margin-top: 20;
+}
