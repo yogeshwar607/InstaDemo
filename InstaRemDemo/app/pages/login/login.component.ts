@@ -11,7 +11,6 @@ import {TextField} from "ui/text-field";
 import app = require("application");
 import platform = require("platform");
 var orientationModule = require("nativescript-screen-orientation");
-var FacebookLoginHandler = require("nativescript-facebook-login");
 @Component({
   selector: "my-app",
   providers:[UserService],
