@@ -1,0 +1,9 @@
+use_frameworks!
+
+target "InstaRemDemo" do
+# Begin Podfile - /Users/yogismac/CodeBase/NativeScript/instarem-demo/InstaRemDemo/node_modules/nativescript-facebook-login/platforms/ios/Podfile 
+ pod 'FBSDKCoreKit', '~> 4.7'
+pod 'FBSDKLoginKit', '~> 4.7' 
+ # End Podfile 
+
+end

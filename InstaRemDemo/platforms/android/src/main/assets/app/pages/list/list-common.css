@@ -1,3 +1,7 @@
+Page {
+    background-color: #EBF1F1;
+    font-size: 15
+}
 .action-image {
 padding-left: 10;
 padding-right: 10;
@@ -10,8 +14,6 @@ width: 40px;
 }
 .user-bar {
   background-color: #E0E0E0;
-  margin-bottom: 0px;
-  padding-top: 0px;
 }
 .user-bar Image {
   vertical-align: center;
@@ -25,8 +27,6 @@ width: 40px;
 .user-info-bar {
   background-color: #EBF1F1;
   vertical-align: center;
-  margin-top: 0px;
-  padding-top: 0px;
 }
 .user-info-bar StackLayout {
   margin-left: 40px;
@@ -38,7 +38,24 @@ width: 40px;
 .user-info-bar-value {
   color: #2A434E;
   font-size: 14;
-  padding-bottom: 10px;
+  padding-bottom: 10;
+}
+.user-kyc-bar {
+  background-color: white;
+  vertical-align: center;
+  font-size:12;
+  color: #717372;
+}
+.user-kyc-bar Image {
+  vertical-align: center;
+  margin-right: 2;
+  height: 20px;
+}
+.tabview-stack-passport {
+  margin-left: 40;
+}
+.tabview-stack-address {
+  margin-left: 50%;
 }
 TextField {
   color: white;

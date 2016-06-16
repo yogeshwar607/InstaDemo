@@ -8,7 +8,10 @@ import {Color} from "color";
 import {View} from "ui/core/view";
 import {setHintColor} from "../../utils/hint-util";
 import {TextField} from "ui/text-field";
+import app = require("application");
+import platform = require("platform");
 var orientationModule = require("nativescript-screen-orientation");
+var FacebookLoginHandler = require("nativescript-facebook-login");
 @Component({
   selector: "my-app",
   providers:[UserService],
@@ -76,8 +79,67 @@ signUp() {
 googleConnect(){
 alert("Coming Soon");
 }
+successCallback (result) {
+            //Do something with the result, for example get the AccessToken
+            var token;
+            if (app.android){
+              token = result.getAccessToken().getToken();
+            }
+            else if (app.ios){
+              token = result.token.tokenString
+            }
+            alert(token);
+        }
+         cancelCallback () {
+            alert("Login was cancelled");
+        }
+
+         failCallback (error) {
+            var errorMessage = "Error with Facebook";
+           //Try to get as much information as possible from error
+           if (error) {
+                if (app.ios) {
+                    if (error.localizedDescription) {
+                        errorMessage += ": " + error.localizedDescription;
+                    }
+                    else if (error.code) {
+                        errorMessage += ": Code " + error.code;
+                    }
+                    else {
+                        errorMessage += ": " + error;   
+                    }
+                }
+                else if (app.android) {
+                    if (error.getErrorMessage) {
+                        errorMessage += ": " + error.getErrorMessage();
+                    }
+                    else if (error.getErrorCode) {
+                        errorMessage += ": Code " + error.getErrorCode();
+                    }
+                    else {
+                        errorMessage += ": " + error;   
+                    }
+                }
+            }
+            alert(errorMessage);
+        }  
 fbConnect() {
-alert("trying to implement but giving error for angular 2");     
+alert("tried to implement but giving error for angular 2");    
+    //Here we select the login behaviour
+
+    //Recomended system account with native fallback for iOS
+    if (app.ios) {
+        FacebookLoginHandler.init(2);
+    }
+    //Recomended default for android 
+    else if (app.android) {
+        FacebookLoginHandler.init();
+    }
+    //Register our callbacks
+    FacebookLoginHandler.registerCallback(this.successCallback, this.cancelCallback, this.failCallback);
+    //Start the login process
+    FacebookLoginHandler.logInWithPublishPermissions(["publish_actions"]);      
+
 }
 setTextFieldColors() {
   let emailTextField = <TextField>this.email.nativeElement;
@@ -91,4 +153,5 @@ setTextFieldColors() {
   setHintColor({ view: emailTextField, color: hintColor });
   setHintColor({ view: passwordTextField, color: hintColor });
 }
+
 }
