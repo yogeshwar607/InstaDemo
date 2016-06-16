@@ -6,7 +6,6 @@ var router_deprecated_1 = require("@angular/router-deprecated");
 var page_1 = require("ui/page");
 var color_1 = require("color");
 var hint_util_1 = require("../../utils/hint-util");
-var app = require("application");
 var orientationModule = require("nativescript-screen-orientation");
 var FacebookLoginHandler = require("nativescript-facebook-login");
 var LoginPage = (function () {
@@ -65,63 +64,8 @@ var LoginPage = (function () {
     LoginPage.prototype.googleConnect = function () {
         alert("Coming Soon");
     };
-    LoginPage.prototype.successCallback = function (result) {
-        //Do something with the result, for example get the AccessToken
-        var token;
-        if (app.android) {
-            token = result.getAccessToken().getToken();
-        }
-        else if (app.ios) {
-            token = result.token.tokenString;
-        }
-        alert(token);
-    };
-    LoginPage.prototype.cancelCallback = function () {
-        alert("Login was cancelled");
-    };
-    LoginPage.prototype.failCallback = function (error) {
-        var errorMessage = "Error with Facebook";
-        //Try to get as much information as possible from error
-        if (error) {
-            if (app.ios) {
-                if (error.localizedDescription) {
-                    errorMessage += ": " + error.localizedDescription;
-                }
-                else if (error.code) {
-                    errorMessage += ": Code " + error.code;
-                }
-                else {
-                    errorMessage += ": " + error;
-                }
-            }
-            else if (app.android) {
-                if (error.getErrorMessage) {
-                    errorMessage += ": " + error.getErrorMessage();
-                }
-                else if (error.getErrorCode) {
-                    errorMessage += ": Code " + error.getErrorCode();
-                }
-                else {
-                    errorMessage += ": " + error;
-                }
-            }
-        }
-        alert(errorMessage);
-    };
     LoginPage.prototype.fbConnect = function () {
         alert("tried to implement but giving error for angular 2");
-        //Here we select the login behaviour
-        //Recomended system account with native fallback for iOS
-        if (app.ios) {
-            FacebookLoginHandler.init(2);
-        }
-        else if (app.android) {
-            FacebookLoginHandler.init();
-        }
-        //Register our callbacks
-        FacebookLoginHandler.registerCallback(this.successCallback, this.cancelCallback, this.failCallback);
-        //Start the login process
-        FacebookLoginHandler.logInWithPublishPermissions(["publish_actions"]);
     };
     LoginPage.prototype.setTextFieldColors = function () {
         var emailTextField = this.email.nativeElement;
