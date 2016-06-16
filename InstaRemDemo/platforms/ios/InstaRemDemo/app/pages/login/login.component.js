@@ -7,7 +7,6 @@ var page_1 = require("ui/page");
 var color_1 = require("color");
 var hint_util_1 = require("../../utils/hint-util");
 var orientationModule = require("nativescript-screen-orientation");
-var FacebookLoginHandler = require("nativescript-facebook-login");
 var LoginPage = (function () {
     function LoginPage(page, _router, _userService) {
         this.page = page;
